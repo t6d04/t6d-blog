@@ -2,8 +2,11 @@ import ListPosts from "@/components/listPost/ListPosts";
 import Post from "@/components/Post";
 
 export function generateStaticParams() {
-    return [{ category: 'test' }]
-}
+    return [
+      { category: 'ctf', product: 'test' },
+      { category: 'learning', product: 'ssg-ssr' },
+    ]
+  }
 
 async function IdPage({params}: {params: Promise<{id: string}>}) {
 
