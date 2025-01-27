@@ -1,5 +1,9 @@
 import ListPosts from "@/components/listPost/ListPosts";
 
+export function generateStaticParams() {
+    return [{ id: 'ctf' }, { id: 'learning' }, { id: 'story' }]
+  }
+
 async function CategoryPage({params}: {params: Promise<{category: string}>}) {
 
     const category = (await params).category;
