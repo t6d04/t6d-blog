@@ -4,7 +4,7 @@ export function generateStaticParams() {
     return [
       { category: 'ctf'},
       { category: 'learning',},
-      { category: 'story',}
+    //   { category: 'story',}
     ]
 }
 
