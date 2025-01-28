@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 async function IdPage({
   params,
 }: {
-  params: { category: string; id: string };
+  params: Promise<{ category: string; id: string }>;
 }) {
   const id = (await params).id;
 
