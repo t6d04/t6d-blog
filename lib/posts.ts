@@ -9,7 +9,7 @@ import type { PostItem } from '@/types';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export const getSortedPostsData = ():PostItem[] => {
+export const getSortedPostsData = () => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
