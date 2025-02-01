@@ -22,11 +22,11 @@ const Header = () => {
             Learning
           </Link>
         </div>
-        <div className="cursor-pointer overflow-hidden w-fit h-fit transition ease-in-out delay-50 duration-300 hover:bg-white hover:text-black hover:shadow-lg hover:shadow-red-500/40">
+        {/* <div className="cursor-pointer overflow-hidden w-fit h-fit transition ease-in-out delay-50 duration-300 hover:bg-white hover:text-black hover:shadow-lg hover:shadow-red-500/40">
           <Link className="flex px-4 py-2" href={'/tag/story'}>
             Story
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   )
