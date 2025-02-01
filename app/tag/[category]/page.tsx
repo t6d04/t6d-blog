@@ -10,7 +10,7 @@ async function CategoryPage({
   const categoryPosts = posts[(await params).category]
 
   return (
-    <div className="flex flex-row gap-3 mx-[240px] mt-[100px] font-poppins text-white justify-center">
+    <div className="flex flex-col gap-10 mx-[240px] mt-[100px] font-poppins text-white justify-center">
       {categoryPosts.map((post) => (
         <PostElement key={post.id} {...post} />
       ))}
