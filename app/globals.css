@@ -3,7 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply bg-[url('/back.jpg')] bg-cover bg-center text-white h-dvh
-    }
+  body {
+    @apply bg-[url('/back.jpg')] bg-cover bg-center text-white h-dvh;
+  }
+
+  article > h1 {
+    @apply font-lexend text-wrap text-3xl font-bold my-2 relative before:relative before:content-['#_'];
+  }
+
+  article > h2 {
+    @apply font-lexend text-wrap text-2xl font-bold my-2 relative before:relative before:content-[''];
+  }
+
+  article > h3 {
+    @apply font-lexend text-wrap text-xl font-bold my-2 relative before:relative before:content-[''];
+  }
+
+  article p {
+    @apply font-lexend text-wrap text-lg font-extralight my-4 relative before:relative before:content-[''];
+  }
+
+  article li {
+    @apply font-lexend text-wrap text-lg font-extralight my-4 relative before:relative before:content-['-_'];
+  }
+
+  article pre {
+    @apply font-sourceCodePro text-wrap text-base font-normal relative border border-white bg-black p-8
+  }
+
+  article li code {
+    @apply font-sourceCodePro text-wrap text-base font-normal relative bg-white/15 p-1
+  }
+
+  article p code {
+    @apply font-sourceCodePro text-wrap text-base font-normal relative border border-white bg-white/15 p-1
+  }
+
+  
+  
 }

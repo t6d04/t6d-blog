@@ -5,37 +5,52 @@ date: '26-01-2025'
 ---
 
 # Chuẩn bị
+
 - Kiến thức cơ bản về giao thức HTTP/HTTPS, bao gồm request/response và status code.
 - Sử dụng web proxy như BurpSuite.
 - Sử dụng Linux.
 
 # Authentication Enumeration
+
 ## Authentication Enumeration
+
 ### Identifying Valid Usernames
-- Xác định định đúng username đương nhiên giúp cho việc brute force nhanh hơn và chính xác hơn. 
-- Có thể xác định được username đúng thông qua *Quên mật khẩu* hay thông báo từ hệ thống.
+
+- Xác định định đúng username đương nhiên giúp cho việc brute force nhanh hơn và chính xác hơn.
+- Có thể xác định được username đúng thông qua _Quên mật khẩu_ hay thông báo từ hệ thống.
+
 ### Password Policies
-- Có thể biết được đơn giản qua việc xem ở *Đăng ký*
+
+- Có thể biết được đơn giản qua việc xem ở _Đăng ký_
 - Từ đấy dự đoán được độ phức tạp của mật khẩu, điều chỉnh chiến lược, bỏ bớt mật khẩu vi phạm.
+
 ## Common Places to Enumerate
+
 - Đăng ký
 - Quên mật khẩu
 - Thông báo lỗi
 - Data từ lần vi phạm dữ liệu trước đó
+
 # Enumerating Users via Verbose Errors
+
 ## Inducing Verbose Errors
+
 - Cố gắng login sai: Đôi khi login làm hệ thống bắn ra các thông báo có lợi như "username not exist" hay "password incorrect".
 - SQL Injection: Với loại này thì ta điền thêm vài ký tự đặc biệt vào nhưng nơi dự đoán có liên quan với DB, ví dụ như thêm `' " -- # ;`.
 - LFI: Thử truy cập vài đường dẫn không được phép hoặc thêm thử `../` vào một số nơi có thể gây lỗi để xem.
 - Thao túng form: Việc điền sai vài parameter hay bấm nút ko dc phép bấm thử cũng là một lựa chọn.
 - Application Fuzzing: Gửi một đống input thứ mà hệ thống không lường trước được cũng là cách, một số tool hay dùng như `BurpSuite` hay `ffuf` hay được tin dùng.
+
 ## Thử nghiệm
+
 > Tất cả các tài nguyên dưới đây là từ **TryHackMe**
+
 - Ta có một web lab nhỏ có giao diện như sau:
-![alt text](image.png)
+  ![alt text](image.png)
 - Nếu nhập đúng email thì thông báo có chút khác biệt:
-![alt text](image-1.png)
+  ![alt text](image-1.png)
 - Dựa trên đây ta có một script nhỏ bằng python:
+
 ```python
 import requests
 import sys
@@ -96,5 +111,6 @@ if __name__ == "__main__":
         print(valid_email)
 
 ```
+
 - Scan nửa ngày thif cuối cùng cũng có cái valid:
-![alt text](image-2.png)
+  ![alt text](image-2.png)

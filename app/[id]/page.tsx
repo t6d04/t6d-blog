@@ -1,20 +1,26 @@
-import ListPosts from "@/components/listPost/ListPosts";
-import Post from "@/components/Post";
+import { getPostData } from '@/lib/posts';
 
 async function IdPage({
   params,
 }: {
-  params: Promise<{ category: string; id: string }>;
+  params: Promise<{ category: string; id: string }>
 }) {
-  const id = (await params).id;
+  const id = (await params).id
+
+  const post = await getPostData(id)
 
   return (
-    <div className="flex flex-row mx-[240px] mt-[100px] font-poppins text-white">
-      <ListPosts category="ctf" id={""} title={""} date={""} />
-      <div className="mx-8 w-[0.5px] bg-white" />
-      <Post id={id} title={""} date={""} category={""} />
+    <div className="flex flex-col mx-[240px] mt-[100px] font-lexend text-white">
+      <div className='fit-content bg-black/80 p-4'>
+        <div className='text-center text-4xl font-bold mb-4'>{post.title}</div>
+        <div className='text-center text-lg font-extralight italic'>Ngày viết: {post.date}</div>
+        <article
+        className="flex flex-col font-poppins text-white"
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+        ></article>
+      </div>
     </div>
-  );
+  )
 }
 
-export default IdPage;
+export default IdPage
