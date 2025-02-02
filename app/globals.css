@@ -32,11 +32,11 @@
   }
 
   article li code {
-    @apply font-sourceCodePro text-wrap text-base font-normal relative bg-white/15 px-1
+    @apply font-sourceCodePro text-wrap text-base font-normal relative bg-white px-1 text-black
   }
 
   article p code {
-    @apply font-sourceCodePro text-wrap text-base font-normal relative bg-white/15 px-1
+    @apply font-sourceCodePro text-wrap text-base font-normal relative bg-white px-1 text-black
   }
 
   article img {
