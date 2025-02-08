@@ -42,5 +42,9 @@
   article img {
     @apply w-full h-auto my-4
   }
+
+  article blockquote {
+    @apply font-light italic bg-white/20 my-2 pl-4
+  }
   
 }

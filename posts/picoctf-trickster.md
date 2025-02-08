@@ -47,7 +47,7 @@ echo "<?php echo 'HelloWorld' ?>" >> reverse.png.php
 ```
 > Trong đó cái `xxd` 1 tool đọc hex hoặc là dịch ngược lại
 > - Với `-p` là chỉ in ra dạng hexdump style, tức là chỉ có số kiểu như: ![alt text](/picoctf-trickster/image-13.png)
-> - Với -r là lật dạng hex thành dạng bin
+> - Với `-r` là lật dạng hex thành dạng bin
 
 ![alt text](/picoctf-trickster/image-12.png)
 Một cách nữa là chuyển thẳng thành dạng UTF-8 rồi copy vào. 
