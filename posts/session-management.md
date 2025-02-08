@@ -5,7 +5,7 @@ category: 'learning'
 ---
 
 # Definition
-![alt text](image.png)
+![alt text](/session-management/image.png)
 - Trên đây là hình ảnh lifesycle của session, từ đó ta có một số khái niệm như sau:
 ## Session Creation
 - Sesson được khởi tạo khi bạn đã xác thực danh tính (hay đơn giản là login).
@@ -23,7 +23,7 @@ category: 'learning'
 - Nếu việc này ko xảy ra thì sẽ dẫn đễn duy trì sử dụng.
 # Autthentication vs Authorisation
 - 2 khái niệm này rất dễ nhầm vì tên gọi giống nhau và cùng nằm trong IAAA model. Ta sẽ xem để biết được từng phần làm gì:
-![alt text](image-1.png)
+![alt text](/session-management/image-1.png)
 ## Identification
 - Phần này đệ nhận dạng xem ai đang truy cập.
 - Có nhiều cách để định danh như sử dụng email, username, số điện thoại,...
@@ -43,7 +43,7 @@ category: 'learning'
 - Khi người dùng đăng nhập thành công, server sẽ gửi lại phía browser session ID để user có thể sử dụng để truy cập. Response sẽ có dạng: `Set-Cookie: <cookie-name>=<cookie-value>`
 - User sẽ sử dụng session ID này cho các lần request yêu cầu tới cookie.
 - Phía server sẽ kiểm tra xem session ID này còn hợp lệ không, nếu ko ta bị kick.
-![alt text](image-2.png)
+![alt text](/session-management/image-2.png)
 - Có một số điều đáng chú ý trong phần cookie như:
     - `Secure`: Chỉ ra rằng cookie chỉ được sử dụng trong HTTPS, nếu ở HTTP, hay certificate lỗi thì cookie sẽ ko được sử dụng
     - `HTTPOnly`: Chỉ ra rằng cookie sẽ không được đọc bởi client-side JS.
