@@ -111,6 +111,11 @@ if __name__ == "__main__":
         print(valid_email)
 
 ```
-
 - Scan nửa ngày thif cuối cùng cũng có cái valid:
   ![alt text](image-2.png)
+# Exploiting Vulnerable Password Reset Logic
+## Password Reset Flow Vulnerabilities
+- Email-Based Reset
+- Security Question-Based Reset
+- SMS-Based Reset
+## Exploiting Predictable Tokens
