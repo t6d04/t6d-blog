@@ -1,14 +1,27 @@
 import { getPostData } from '@/lib/posts';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
-async function IdPage({
-  params,
-}: {
-  params: Promise<{ category: string; id: string }>
-}) {
-  const id = (await params).id
+type Props = {
+  params: { id: string; category: string };
+};
 
-  const post = await getPostData(id)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPostData(params.id);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: post.title,
+  };
+}
+
+async function IdPage({ params }: Props) {
+  const post = await getPostData(params.id);
 
   if (!post) {
     notFound();
