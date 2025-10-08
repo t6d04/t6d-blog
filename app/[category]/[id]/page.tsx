@@ -1,4 +1,5 @@
 import { getPostData } from '@/lib/posts';
+import { notFound } from 'next/navigation';
 
 async function IdPage({
   params,
@@ -8,6 +9,10 @@ async function IdPage({
   const id = (await params).id
 
   const post = await getPostData(id)
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className="flex flex-col mx-[240px] mt-[100px] font-lexend text-white">

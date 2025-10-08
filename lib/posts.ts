@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import moment from 'moment'
 import { remark } from 'remark'
-import html from 'remark-html'
+import remarkHtml from 'remark-html'
 
 import type { PostItem } from '@/types'
 
@@ -64,6 +64,11 @@ export const getCategoryPosts = (): Record<string, PostItem[]> => {
 
 export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
+
+  if (!fs.existsSync(fullPath)) {
+    return null
+  }
+
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
@@ -71,7 +76,7 @@ export async function getPostData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
+    .use(remarkHtml)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 

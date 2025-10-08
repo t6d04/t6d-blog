@@ -7,7 +7,7 @@ async function CategoryPage({
   params: Promise<{ category: string }>
 }) {
   const posts = getCategoryPosts()
-  const categoryPosts = posts[(await params).category]
+  const categoryPosts = posts[(await params).category] || []
 
   return (
     <div className="flex flex-col gap-10 mx-[240px] mt-[100px] font-poppins text-white justify-center">

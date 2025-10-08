@@ -26,7 +26,7 @@ const Home = () => {
         <Link href={'https://www.facebook.com/namlph2784/'}>
           <FaFacebook className="size-8 scale-100 transition-all ease-in-out delay-50 duration-300 hover:scale-150" />
         </Link>
-        <Link href={'https://www.instagram.com/namlph.04/'}>
+        <Link href={''}>
           <FaSquareInstagram className="size-8 scale-100 transition-all ease-in-out delay-50 duration-300 hover:scale-150" />
         </Link>
         <Link href={''}>
