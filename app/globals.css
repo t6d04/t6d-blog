@@ -24,7 +24,7 @@
   }
 
   article li {
-    @apply font-lexend text-wrap text-lg font-extralight my-4 relative before:relative before:content-['-_'];
+    @apply font-lexend text-wrap text-lg font-extralight my-4 relative before:relative before:content-[''];
   }
 
   article pre {
